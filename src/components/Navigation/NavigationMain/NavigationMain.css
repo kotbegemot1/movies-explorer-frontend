@@ -1,0 +1,36 @@
+.navigation {
+}
+
+.navigation__items {
+  display: flex;
+  margin: 0;
+  list-style: none;
+  justify-content: flex-end;
+  align-items: center; 
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.navigation__item {
+  /* align-items: center; */
+  list-style: none;
+  margin-left: 30px;
+}
+
+.navigation__link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navigation__button {
+  background-color: #3DDC84;
+  border: 0;
+  width: 76px;
+  height: 32px  ;
+  border-radius: 3px;
+  color: #000;
+}
