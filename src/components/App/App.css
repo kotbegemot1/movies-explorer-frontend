@@ -1,6 +1,5 @@
 .App {
   background-color: #202020;
-  /* max-width: 1280px; */
   margin: auto;
   box-sizing: border-box;
   -moz-osx-font-smoothing: grayscale;
@@ -10,4 +9,14 @@
   -moz-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
   min-height: 100vh;
+}
+
+.button:hover {
+  opacity: .8;
+  cursor: pointer;
+}
+
+.link:hover {
+  opacity: .7;
+  cursor: pointer;
 }

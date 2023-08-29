@@ -1,11 +1,14 @@
-import './App.css';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+
+import './App.css';
 import Main from '../Main/Main'
 import Movies from '../Movies/Movies'
 import SavedMovies from '../SavedMovies/SavedMovies'
-import Register from '../Register/Register'
-import Login from '../Login/Login'
-import Profile from '../Profile/Profile'
+import Register from '../Form/Register/Register'
+import Login from '../Form/Login/Login'
+import Profile from '../Form/Profile/Profile'
+import NotFound from '../NotFound/NotFound'
 
 function App() {
   return (
@@ -17,6 +20,7 @@ function App() {
         <Route path="/signup" element={<Register />} />
         <Route path="/signin" element={<Login />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
