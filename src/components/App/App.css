@@ -20,3 +20,8 @@
   opacity: .7;
   cursor: pointer;
 }
+
+.App_active {
+  position: fixed;
+  width: 100vw;
+}

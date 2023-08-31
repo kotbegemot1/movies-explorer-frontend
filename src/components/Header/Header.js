@@ -2,11 +2,12 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 
 import './Header.css'
-import NavigationMain from '../Navigation/NavigationAuth/NavigationAuth'
-import NavigationMovies from '../Navigation/NavigationSite/NavigationSite'
+import NavigationAuth from '../Navigation/NavigationAuth/NavigationAuth'
+import NavigationSite from '../Navigation/NavigationSite/NavigationSite'
 import Logo from '../Logo/Logo'
 
-export default function Header() {
+export default function Header(props) {
+  // console.log(props);
 
   const location = useLocation();
   
@@ -19,8 +20,8 @@ export default function Header() {
       <div className="header__container">
       <Logo />
       {boolenVal ?
-      <NavigationMovies /> :
-      <NavigationMain />
+      <NavigationSite burgerToggle = {props.burgerToggle} burgerState = {props.burgerState} /> :
+      <NavigationAuth />
       }
 
       </div>

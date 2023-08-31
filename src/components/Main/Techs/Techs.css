@@ -139,17 +139,17 @@
   } 
 }
 
-@media screen and (max-width: 352px) {
+@media screen and (max-width: 367px) {
   .techs__item-list {
     box-sizing: border-box;
-    padding: 0 46px;
+    padding: 0 25px;
     justify-content: start;
   } 
 }
 
 @media screen and (max-width: 320px) {
   .techs__item-list {
-    padding: 0 30px;
+    padding: 0 25px;
   } 
   .techs__item {
     margin: 10px 0 0 10px;

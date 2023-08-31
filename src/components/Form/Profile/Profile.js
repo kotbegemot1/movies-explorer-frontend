@@ -3,10 +3,10 @@ import React from 'react';
 import './Profile.css'
 import Header from '../../Header/Header'
 
-export default function Profile() {
+export default function Profile(props) {
   return (
     <>
-      <Header />
+      <Header burgerToggle = {props.burgerToggle} />
       <main>
         <div className="profile">
           <form className="profile__container">
@@ -18,7 +18,11 @@ export default function Profile() {
                 type="text"
                 name="name"
                 id="name-input"
-                value="Евгений" />
+                value="Евгений" 
+                minLength="2"
+                maxLength="20"
+                placeholder="Введите имя"
+                />
             </div>
             <div className="profile__input-container">
               <label className="profile__label-text">E-mail </label>
@@ -27,7 +31,10 @@ export default function Profile() {
                 type="email"
                 name="email"
                 id="email-input"
-                value="pochta@yandex.ru" />
+                value="pochta@yandex.ru"
+                minLength="2"
+                maxLength="20"
+                placeholder="Введите пароль" />
             </div>
             <button className="profile__edit-btn button" type='button'>Редактировать</button>
             <button className="profile__logout-btn button" type='button'>Выйти из аккаунта</button>

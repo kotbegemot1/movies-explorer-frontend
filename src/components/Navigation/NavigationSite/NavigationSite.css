@@ -1,3 +1,8 @@
+.navigations__items-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .navigation__items {
   display: flex;
   margin: 0;
@@ -22,8 +27,6 @@
   text-decoration: none;
   color: inherit;
 }
-
-
 
 .navigation__link_active {
   font-weight: 500;
@@ -86,58 +89,6 @@
 
   .navigation__items {
     display: none;
-    padding: 0;
-    position: absolute;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 520px;
-    height: 1024px;
-    right: 0;
-    top: 0;
-    background-color: #202020;
-    z-index: 1;
-
-  }
-
-  .navigation__items_active {
-    display: flex;
-  }
-
-  .navigation__item {
-    margin: 0 0 28px;
-    font-size: 18px;
-    line-height: 21.78px;
-  }
-
-  .navigation__link_active {
-    padding-bottom: 4px;
-    border-bottom: 2px solid #fff;
-  }
-
-  .navigation__item_type_mobile {
-    display: block;
-  }
-
-  .navigation__close-btn {
-    background-color: inherit;
-    background-image: url('../../../images/krest.png');
-    background-position: center;
-    padding: 11px;
-    border: none;
-    width: 22px;
-    height: 22px;
-    display: block;
-    align-self: self-end;
-    margin-top: 27px;
-    margin-right: 27px;
-    margin-bottom: 110px;
-  }
-
-  .navigation__item:last-child {
-    margin-top: 595px;
-    margin-left: 0px;
-    font-size: 14px;
-    line-height: 16px;
   }
 }
 
@@ -154,24 +105,5 @@
 
   .navigation__burger-lane:nth-child(2) {
     margin: 6.5px 0;
-  }
-
-  .navigation__items {
-    width: 320px;
-    height: 780px;
-  }
-
-  .navigation__close-btn {
-    margin-top: 18px;
-    margin-right: 18px;
-    margin-bottom: 105px;
-  }
-
-  .navigation__item {
-    margin-bottom: 24px;
-  }
-
-  .navigation__item:last-child {
-    margin-top: 420px;
   }
 }

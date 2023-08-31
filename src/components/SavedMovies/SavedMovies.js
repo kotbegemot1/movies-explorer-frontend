@@ -7,13 +7,13 @@ import MoviesCardList from "../MoviesCardList/MoviesCardList"
 
 // import Preloader from "../Preloader/Preloader"
 
-export default function SavedMovies() {
+export default function SavedMovies(props) {
 
   const [isSavedMovies, setIsSavedMovies] = useState(true);
 
   return (
     <>
-      <Header />
+      <Header burgerToggle = {props.burgerToggle} />
       <main>
         <SearchForm />
         <MoviesCardList isSaved={isSavedMovies} />

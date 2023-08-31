@@ -17,7 +17,7 @@ export default function MoviesCard(isSavedMovies) {
         <h3 className="movies-card__title">В погоне за Бенкси</h3>
         <p className="movies-card__movie-length">0ч 42м </p>
       </div>
-      <img className="movies-card__poster" alt='movie poster' src={testImage} />
+      <img className="movies-card__poster" alt='Постер фильма' src={testImage} />
 
       {isSavedMovies
         ?

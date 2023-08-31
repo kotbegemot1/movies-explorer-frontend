@@ -20,8 +20,10 @@ export default function Register() {
             type="text"
             name="name"
             id="name-input"
-            minlength="2"
-            maxlength="20" />
+            minLength="2"
+            maxLength="20"
+            placeholder="Введите имя"
+            required />
           <span className="name-input-error form__input-error"></span>
         </div>
         <div className="form__input-container">
@@ -31,8 +33,10 @@ export default function Register() {
             type="email"
             name="email"
             id="email-input"
-            minlength="2"
-            maxlength="20" />
+            minLength="2"
+            maxLength="20"
+            placeholder="Введите email"
+            required />
           <span className="email-input-error form__input-error"></span>
         </div>
         <div className="form__input-container">
@@ -42,8 +46,10 @@ export default function Register() {
             type="password"
             name="password"
             id="password-input"
-            minlength="2"
-            maxlength="20" />
+            minLength="2"
+            maxLength="20"
+            placeholder="Введите пароль"
+            required />
           <span className="password-input-error form__input-error">Что-то пошло не так...</span>
         </div>
       </Form>

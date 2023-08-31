@@ -10,7 +10,9 @@ export default function SearchForm() {
           className="search-form__search"
           placeholder="Фильм"
           type="text"
-          name="search-input" />
+          name="search-input"
+          minLength="2"
+          maxLength="100"/>
         <button className="search-form__search-button button" type="submit">Поиск</button>
 
         <label className="search-form__checkbox-wrapper">
@@ -20,7 +22,7 @@ export default function SearchForm() {
             id="filter"
             name="filter" />
           <span className="search-form__slider"></span>
-          <p className="search-form__text">Короткометражки</p>
+          <span className="search-form__text">Короткометражки</span>
         </label>
       </form>
     </section>

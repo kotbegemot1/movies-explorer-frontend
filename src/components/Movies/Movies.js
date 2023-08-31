@@ -7,10 +7,11 @@ import MoviesCardList from "../MoviesCardList/MoviesCardList"
 
 // import Preloader from "../Preloader/Preloader"
 
-export default function Movies() {
+export default function Movies(props) {
+  // console.log(props.burgerState);
   return (
     <>
-      <Header />
+      <Header burgerToggle = {props.burgerToggle} />
       <main>
         <SearchForm />
         <MoviesCardList />
