@@ -18,6 +18,6 @@ Figma https://www.figma.com/file/6FMWkB94wE7KTkcCgUXtnC/light-1?type=design&node
 
 ## Ссылка на проект
 
-BackEnd https://github.com/kotbegemot1/movies-explorer-frontend
+https://github.com/kotbegemot1/movies-explorer-frontend
 
 
