@@ -12,7 +12,7 @@ const MOVIES_API_URL_MOVIES = "https://api.nomoreparties.co/beatfilm-movies";
 
 
 //moviesApi url
-const MAIN_API_URL = "http://api.yadiplom.nomoreparties.co";
+const MAIN_API_URL = "https://api.yadiplom.nomoreparties.co";
 
 //resize display
 const DISPLAY_WIDTHS = {
@@ -42,7 +42,7 @@ const VALIDATE_NAME_MESSAGE = "Поле Имя может содержать т�
 const VALIDATE_EMAIL_MESSAGE = "Недопустимый e-mail";
 
 // Валидация поля name
-const REGEX_NAME = "^[?!,.а-яА-ЯёЁ0-9\s]+$";
+const REGEX_NAME = "^[А-Яа-яЁёA-Za-z\\s\\-]+$";
 
 module.exports = {
   DISPLAY_WIDTHS,
