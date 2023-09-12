@@ -1,9 +1,18 @@
 import React from 'react';
 
-import '../Form.css'
-import Form from '../Form'
+import '../Form.css';
+import Form from '../Form';
+import { useFormWithValidation } from '../../../hooks/useFormWithValidation';
 
-export default function Login() {
+
+export default function Login(props) {
+  const { values, handleChange, errors, isValid } = useFormWithValidation();
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    props.onLogin(values);
+  }
+
   return (
     <main>
       <Form
@@ -12,6 +21,9 @@ export default function Login() {
         linkText="Ещё не зарегистрированы?"
         linkName="Регистрация"
         path="/signup"
+        isValid={isValid}
+        apiMessage={props.apiMessage}
+        onSubmit={handleSubmit}
       >
         <div className="form__input-container">
           <label className="form__input-label">E-mail</label>
@@ -22,9 +34,12 @@ export default function Login() {
             id="email-input"
             minLength="2"
             maxLength="20"
+            autoComplete="off"
             placeholder="Введите email"
-            required/>
-          <span className="email-input-error form__input-error"> </span>
+            value={values.email || ''}
+            onChange={handleChange}
+            required />
+          <span className="name-input-error form__input-error">{errors.email}</span>
         </div>
         <div className="form__input-container">
           <label className="form__input-label">Пароль</label>
@@ -36,8 +51,11 @@ export default function Login() {
             minLength="2"
             maxLength="20"
             placeholder="Введите пароль"
-            required/>
-          <span className="password-input-error form__input-error">Что-то пошло не так...</span>
+            value={values.password || ''}
+            onChange={handleChange}
+            required />
+          <span className="name-input-error form__input-error">{errors.password}</span>
+
         </div>
       </Form>
     </main>

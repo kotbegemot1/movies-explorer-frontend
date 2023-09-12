@@ -44,6 +44,11 @@
   color: #fff;
 }
 
+.promo__link {
+  text-decoration: none;
+  color: inherit;
+}
+
 .promo__image {
   object-fit: cover;
   max-width: 100%;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import './BurgerMenu.css'
+import './BurgerMenu.css';
 
 export default function NavigationMovies(props) {
   return (
