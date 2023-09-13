@@ -11,7 +11,6 @@ import { REGEX_NAME, SUCCES_PROFILE_MESSAGE, SMTHNG_WRONG_MESSAGE } from '../../
 export default function Profile(props) {
 
   const currentUser = useContext(CurrentUserContext);
-  console.log(currentUser);
 
   const [btnDeactivate, setBtnDeactivate] = useState(false);
 
@@ -34,7 +33,6 @@ export default function Profile(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(values);
     props.editProfile(values)
   }
 
@@ -79,7 +77,7 @@ export default function Profile(props) {
             <span className='form__api-message form__api-message_type_succes'>{props.apiSucces && SUCCES_PROFILE_MESSAGE}</span>
             <span className='form__api-message'>{props.apiMessage && `${SMTHNG_WRONG_MESSAGE} ${props.apiMessage}`}</span>
             <button
-              className={`profile__edit-btn button ${!isValid || btnDeactivate ? "button_deactivate" : ""}`}
+              className={`profile__edit-btn button ${!isValid || btnDeactivate || props.isLoading ? "button_deactivate" : ""}`}
               type='submit'
             >Редактировать
             </button>

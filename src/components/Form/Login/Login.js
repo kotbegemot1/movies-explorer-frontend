@@ -23,6 +23,7 @@ export default function Login(props) {
         path="/signup"
         isValid={isValid}
         apiMessage={props.apiMessage}
+        isLoading={props.isLoading}
         onSubmit={handleSubmit}
       >
         <div className="form__input-container">

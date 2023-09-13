@@ -36,6 +36,7 @@ function App() {
   }
 
   function handleRegister(name, email, password) {
+    setIsLoading(true)
     mainApi.Register(name, email, password)
       .then(() => {
         handleAuth({ email, password });
@@ -44,6 +45,7 @@ function App() {
         checkApiMessage(err);
         console.log(err);
       })
+      .finally(()=> setIsLoading(false))
   }
 
   function checkApiMessage(err) {
@@ -55,6 +57,7 @@ function App() {
   }
 
   function handleAuth(formValue) {
+    setIsLoading(true)
     mainApi.Login(formValue.email, formValue.password)
       .then(() => {
         setLoggedIn(true);
@@ -62,11 +65,13 @@ function App() {
       })
       .catch((err) => {
         checkApiMessage(err);
-        console.log(apiMessage);
+        console.log(err);
       })
+      .finally(()=> setIsLoading(false))
   }
 
   function handleEditProfile(values) {
+    setIsLoading(true)
     mainApi.editUserInfo(values.name, values.email)
       .then((newUserData) => {
         setCurrentUser(newUserData);
@@ -76,6 +81,7 @@ function App() {
         }, 2000);
       })
       .catch((err) => console.log(err))
+      .finally(()=> setIsLoading(false))
   }
 
   function handleSaveMovie(movie) {
@@ -87,7 +93,6 @@ function App() {
   }
 
   function handleDeleteMovie(movie) {
-    console.log(movie);
     mainApi.deleteMovie(movie._id)
       .then((movie) => {
         setSavedMovies(state => state.filter(m => m.movieId !== movie.movieId));
@@ -105,19 +110,15 @@ function App() {
       .catch((err) => console.log(err))
   }
 
-  const tokenCheck = useCallback(async () => {
-    try {
-      const user = await mainApi.checkToken();
-      if (user) {
-        setCurrentUser(user);
-        setLoggedIn(true);
-        navigate(location.pathname, { replace: true });
-      }
-    } catch (err) {
-      console.error(err);
-    } finally {
-    }
-  }, [navigate])
+  const tokenCheck = useCallback(() => {
+      mainApi.checkToken()
+        .then((currentUser) => {
+          setCurrentUser(currentUser);
+          setLoggedIn(true);
+          navigate(location.pathname, { replace: true })
+        })
+        .catch((err) => console.log(err))
+  }, [])
 
   useEffect(() => {
     tokenCheck();
@@ -147,6 +148,7 @@ function App() {
               <Register
                 onRegister={handleRegister}
                 apiMessage={apiMessage}
+                isLoading={isLoading}
               />} />
           <Route path="/signin" element={
             loggedIn
@@ -156,6 +158,7 @@ function App() {
               <Login
                 onLogin={handleAuth}
                 apiMessage={apiMessage}
+                isLoading={isLoading}
               />} />
           <Route path="/movies" element={
             <ProtectedRoute
@@ -188,6 +191,7 @@ function App() {
               editProfile={handleEditProfile}
               onSignOut={handleSignOut}
               apiMessage={apiMessage}
+              isLoading={isLoading}
               apiSucces={apiSucces}
             />}
           />

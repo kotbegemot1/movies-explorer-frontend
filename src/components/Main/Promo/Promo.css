@@ -32,7 +32,12 @@
   opacity: .5;
 }
 
-.promo__button {
+.promo__link {
+  display: block;
+  box-sizing: border-box;
+  text-align: center;
+  text-decoration: none;
+  padding-top: 9px;
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
@@ -42,11 +47,6 @@
   height: 36px  ;
   border-radius: 3px;
   color: #fff;
-}
-
-.promo__link {
-  text-decoration: none;
-  color: inherit;
 }
 
 .promo__image {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
@@ -18,11 +18,17 @@ export default function Movies(props) {
   function handleMoviesFilter(queryWord, movies) {
     let moviesFilter = handleFilterAllMovies(queryWord, movies)
     if (moviesFilter.length === 0) {
-      console.log(moviesFilter);
       setNotFoundMovies(true);
+      setMovies([]);
     } else {
-      if (shortMoviesActive) {
+      if (localStorage.getItem('shortMoviesActive') === 'true') {
         moviesFilter = handleShortMovies(moviesFilter);
+        setShortMoviesActive(true)
+        if (moviesFilter.length === 0) {
+          setNotFoundMovies(true);
+          setMovies([]);
+          return;
+        }
       }
       setNotFoundMovies(false);
       setMovies(moviesFilter);
@@ -31,9 +37,8 @@ export default function Movies(props) {
 
   function searchMovies(queryWord) {
     localStorage.setItem('queryWord', queryWord)
-    localStorage.setItem('shortMoviesActive', shortMoviesActive)
     setRequestError(false);
-    setMovies([]);
+    
     if (localStorage.getItem('movies')) {
       handleMoviesFilter(queryWord, JSON.parse(localStorage.getItem('movies')));
       return;
@@ -53,16 +58,15 @@ export default function Movies(props) {
 
   function shortMoviesHandler() {
     setShortMoviesActive(!shortMoviesActive);
-    localStorage.setItem('shortMoviesActive', shortMoviesActive);
-
+    localStorage.setItem('shortMoviesActive', !shortMoviesActive)
   }
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (localStorage.getItem('movies')) {
       handleMoviesFilter(
         localStorage.getItem('queryWord'),
         JSON.parse(localStorage.getItem('movies')),
-        localStorage.getItem('shortMoviesActive'))
+        )
     }
   }, [shortMoviesActive])
 

@@ -23,6 +23,7 @@ export default function Register(props) {
         linkName="Войти"
         path="/signin"
         apiMessage={props.apiMessage}
+        isLoading={props.isLoading}
         isValid={isValid}
         onSubmit={handleSubmit}
       >

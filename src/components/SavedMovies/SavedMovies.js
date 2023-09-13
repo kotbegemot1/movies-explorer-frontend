@@ -15,12 +15,16 @@ export default function SavedMovies(props) {
 
   function handleMoviesFilter(savedQueryWord, savedMovies) {
     let moviesFilter = handleFilterAllMovies(savedQueryWord, savedMovies)
-    if (moviesFilter.length === 0 ) {
+    if (moviesFilter.length === 0 && savedMovies.length !== 0 ) {
       setNotFoundMovies(true);
       return moviesFilter
     } else {
       if (shortMoviesActive) {
         moviesFilter = handleShortMovies(moviesFilter)
+        if (moviesFilter.length === 0 ) {
+          setNotFoundMovies(true);
+          return moviesFilter
+        }
       }
       setNotFoundMovies(false);
       return moviesFilter;
@@ -37,7 +41,7 @@ export default function SavedMovies(props) {
   }
 
   useEffect(() => {
-    if (props.savedMovies.length > 0){
+    if (props.savedMovies.length >= 0){
       setFiltredMovies(handleMoviesFilter(savedQueryWord, props.savedMovies));
     }
     

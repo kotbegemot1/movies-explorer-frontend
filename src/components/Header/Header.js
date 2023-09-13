@@ -7,7 +7,6 @@ import NavigationSite from '../Navigation/NavigationSite/NavigationSite';
 import Logo from '../Logo/Logo';
 
 export default function Header(props) {
-  // console.log(props);
 
   const location = useLocation();
   

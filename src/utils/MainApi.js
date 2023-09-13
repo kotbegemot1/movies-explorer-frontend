@@ -17,7 +17,6 @@ class MainApi {
   };
 
   Register(name, email, password) {
-    console.log(name, email, password);
     return fetch(`${this._url}/signup`, {
       method: 'POST',
       headers: this._headers,
@@ -28,7 +27,6 @@ class MainApi {
   };
 
   Login(email, password) {
-    console.log(email, password);
     return fetch(`${this._url}/signin`, {
       method: 'POST',
       headers: {
@@ -38,7 +36,6 @@ class MainApi {
       body: JSON.stringify({email, password})
     })
     .then(res => this._checkResponse(res))
-    .then(res => console.log(res))
   };
 
   checkToken() {
@@ -49,7 +46,6 @@ class MainApi {
   };
 
   editUserInfo(name, email) {
-    //console.log(name, email);
     return fetch(`${this._url}/users/me`, {
       method: 'PATCH',
       headers: {

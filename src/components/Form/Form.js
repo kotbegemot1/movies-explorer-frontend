@@ -19,8 +19,8 @@ export default function Form(props) {
         </div>
         <span className='form__api-message'>{props.apiMessage && `${SMTHNG_WRONG_MESSAGE} ${props.apiMessage}`}</span>
         <button
-          className={`form__btn button ${!props.isValid ? "button_deactivate" : ""}`}
-          disabled={!props.isValid}
+          className={`form__btn button ${!props.isValid || props.isLoading ? "button_deactivate" : ""}`}
+          disabled={!props.isValid || props.isLoading}
           type='submit'
         >{props.btnName}
         </button>
