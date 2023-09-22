@@ -16,6 +16,11 @@
   cursor: pointer;
 }
 
+.button_deactivate {
+  opacity: .5;
+  pointer-events: none;
+}
+
 .link:hover {
   opacity: .7;
   cursor: pointer;

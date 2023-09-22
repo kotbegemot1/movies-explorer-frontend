@@ -16,8 +16,16 @@
 
 Figma https://www.figma.com/file/6FMWkB94wE7KTkcCgUXtnC/light-1?type=design&node-id=1-9662&mode=design&t=2SYhxchiR8XPzGjj-0
 
-## Ссылка на проект
+## Ссылка на проект на Github
 
 https://github.com/kotbegemot1/movies-explorer-frontend
+
+## Ссылка на задеплоенный на сервере проект
+
+https://yadiplom.nomoredomainsicu.ru/
+
+## Ссылка на пул реквест level-3
+
+https://github.com/kotbegemot1/movies-explorer-frontend/pull/2
 
 

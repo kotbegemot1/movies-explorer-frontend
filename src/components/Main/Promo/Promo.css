@@ -32,7 +32,12 @@
   opacity: .5;
 }
 
-.promo__button {
+.promo__link {
+  display: block;
+  box-sizing: border-box;
+  text-align: center;
+  text-decoration: none;
+  padding-top: 9px;
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;

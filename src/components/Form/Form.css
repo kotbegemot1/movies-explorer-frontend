@@ -21,7 +21,7 @@
 
 .form__inputs-wrapper {
   min-height: 266px;
-  margin-bottom: 66px;
+  margin-bottom: 36px;
 }
 
 .form__input-container {
@@ -69,6 +69,31 @@
   font-size: 10px;
   line-height: 12.1px;
   color: #EE3465;
+}
+
+.form__input-error_type_profile {
+  display: block;
+  margin-top: 0;
+  /* width: 100%; */
+  height: 16px;
+}
+
+.form__input-error_type_search {
+  display: block;
+  margin-top: 5px;
+  /* width: 100%; */
+  height: 16px;
+}
+
+.form__api-message {
+  text-align: center;
+  height: 30px;
+  color: #EE3465;
+}
+
+.form__api-message_type_succes {
+  margin-top: 110px;
+  color: #fff;
 }
 
 .form__btn {
@@ -125,7 +150,7 @@
 
   .form__inputs-wrapper {
     width: 100%;
-    margin-bottom: 153px;
+    margin-bottom: 123px;
   }
 
   .form__btn {
